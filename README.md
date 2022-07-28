@@ -56,6 +56,7 @@ mkdir tests
 Planejamento de rotas:
 ```bash
 '/' -> tela com diversos boards e botão para novos boards 
+'/boards' -> tela do board com diversas tasks
 '/<int:board_id>' -> tela do board com diversas tasks
 '/api/<int:board_id>' -> endpoint da api que retorna as tasks do board
 '/api/<int:board_id>/<str:status>' -> endpoint da api que retorna as tasks do board com status específico
@@ -67,3 +68,41 @@ Planejamento de templates:
 'board.html' -> tela do board + botão de nova task + listagem das tasks
 ```
 
+## Siga os passos abaixo para que você consiga executar a aplicação
+---
+
+1. Crie o ambiente virtual
+
+```bash
+python3 -m venv .venv
+```
+
+2. Ative o ambiente virtual
+
+```bash
+source .venv/bin/activate
+```
+
+3. Instale os requerimentos para a aplicação
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Crie a migrações necessárias
+
+```bash
+python3 manage.py makemigrations
+```
+
+5. Realize as migrações
+
+```bash
+python3 manage.py migrate
+```
+
+6. Rode a aplicação
+
+```bash
+python3 manage.py runserver
+```

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boards</title>
+</head>
+<body>
+    {% for board in boards %}
+    <p>
+    <a href="{% url 'boardpage' board.id %}">{{ board }}</a>
+    </p>
+    {% endfor %}
+
+    <form action="" method="post">
+        <div class="body">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="addInputTitle">Board Title:</label>
+            <input type="text" class="form-control" id="addInputTitle" name="title" placeholder="make an awesome app.." required>
+          </div>
+    
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Add Board</button>
+        </div>
+      </form>
+</body>
+</html>
