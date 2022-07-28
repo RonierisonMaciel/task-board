@@ -121,3 +121,50 @@ python3 manage.py runserver
 ```
 
 </details>
+
+<br>
+<br>
+
+## Implementação
+---
+
+<details>
+<summary>Passo a passo</summary>
+
+### Construir o TaskBoard funcional
+
+1. Implementar os models Board e Task no models.py;
+
+2. Implementar as funções index.py e board_page.py que renderizam os templates (nesse momento não é necessário fazer a lógica para criar novos boards e tasks);
+
+3. Implementar os templates index.html e board.html que serão renderizados pelas funções criadas (não é necessário fazer a parte do formulário que recebe os dados para novos objetos);
+
+4. Implementar as rotas '' e '/<int:board_id>' que consumirão as funções e templates implementados nos pontos 2 e 3 e inclui o arquivo taskboard.urls dentro do config/urls.py;
+
+5. Registrar os models na rota de admin;
+
+6. Criar um super usuário e no painel admin (localhost:8000/admin) criar um board e uma task nesse board para teste das páginas;
+
+7. Adicionar os formulários nos templates html criados;
+
+8. Implementar as classes de formulário em forms.py;
+
+9. Refatorar funções nas views para receber requisição post e criar os objetos;
+
+10. Implementar o serializador do board em serializer.py
+
+11. Implementar a viewset para o board que consome o serializador implementado;
+
+12. Implementa o Router, registra a viewset dos boards e adiciona a rota 'api/' redirecionando para as urls do Router;
+
+13. Já é possível visualizar a rota '/api' na aplicação, pode consumir via postman a rota 'api/boards';
+
+14. Realizar passos 10, 11 e 12 para o modelo Task;
+
+15. Implementar as 'extra-actions' que serão filtros associados aos status das tasks;
+
+16. Refatorar o html fazendo a extensão do base.html
+
+17. Estilização usando bootstrap
+
+</details>
