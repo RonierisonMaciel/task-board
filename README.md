@@ -1,7 +1,13 @@
 # Future Felps will write an awesome readme
 
+<br>
 
-## Passo a passo para a criação da estruturação do projeto
+## Estruturação do Projeto
+---
+
+
+<details>
+<summary>Passo a passo</summary>
 
 ```bash
 git clone
@@ -67,9 +73,16 @@ Planejamento de templates:
 'index.html' -> tela com um botão para novos boards + listagem dos boards criados 
 'board.html' -> tela do board + botão de nova task + listagem das tasks
 ```
+</details>
 
-## Siga os passos abaixo para que você consiga executar a aplicação
+<br>
+<br>
+
+## Execução da aplicação
 ---
+
+<details>
+<summary>Passo a passo</summary>
 
 1. Crie o ambiente virtual
 
@@ -106,3 +119,5 @@ python3 manage.py migrate
 ```bash
 python3 manage.py runserver
 ```
+
+</details>
