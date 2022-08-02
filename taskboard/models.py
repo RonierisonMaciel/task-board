@@ -10,10 +10,9 @@ class Board(models.Model):
 class Task(models.Model):
 
     status_list = [
-        ('pending','Pending'),
-        ('doing','Doing'),
-        ('done','Done'),
-        ('help','Help')
+        ('Pending','Pending'),
+        ('Doing','Doing'),
+        ('Done','Done')
     ]
 
     board_id = models.ForeignKey(Board, on_delete=models.CASCADE, null=False, blank=False)

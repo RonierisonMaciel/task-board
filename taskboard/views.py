@@ -1,5 +1,5 @@
 from urllib.robotparser import RequestRate
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Board, Task
 from rest_framework import viewsets
 from .serializer import BoardSerializer, TaskSerializer
@@ -10,15 +10,6 @@ from rest_framework.decorators import action
 
 def index(request):
 
-    if request.method == "POST":
-        form = BoardForm(request.POST)
-
-        if form.is_valid():
-            form.save(commit=True)
-
-        return redirect('homepage')
-
-
     context = {
         'boards': Board.objects.all()
     }
@@ -27,22 +18,34 @@ def index(request):
 
 def board_page(request, board_id: int):
 
-    if request.method == "POST":
-        form = TaskForm(request.POST)
-
-        if form.is_valid():
-            form.save(commit=True)
-
-        redirect('boardpage', board_id=board_id)
-
+    board = get_object_or_404(Board, id=board_id)
 
     context = {
-        'board_id': board_id,
-        'tasks': Task.objects.all().filter(board_id=board_id),
+        'board': board,
+        'pending_tasks': Task.objects.all().filter(board_id=board_id).filter(status='Pending'),
+        'doing_tasks': Task.objects.all().filter(board_id=board_id).filter(status='Doing'),
+        'done_tasks': Task.objects.all().filter(board_id=board_id).filter(status='Done'),
         'status_list': Task.status_list
     }
     return render(request, 'board.html', context)
 
+
+def new_task(request, board_id):
+
+    form = TaskForm(request.POST)
+
+    if form.is_valid():
+        form.save(commit=True)
+
+    return redirect('boardpage', board_id=board_id)
+
+def new_board(request):
+    form = BoardForm(request.POST)
+
+    if form.is_valid():
+        form.save(commit=True)
+
+    return redirect('homepage')
 
 class BoardViewSet(viewsets.ModelViewSet):
     queryset = Board.objects.all()

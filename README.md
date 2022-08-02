@@ -50,7 +50,35 @@ mkdir taskboard/templates
 ```
 
 ```bash
+mkdir taskboard/templates/modals
+```
+
+```bash
+touch taskboard/templates/base.html
+```
+
+```bash
+touch taskboard/templates/board.html
+```
+
+```bash
+touch taskboard/templates/index.html
+```
+
+```bash
+touch taskboard/templates/modals/new_task.html
+```
+
+```bash
+touch taskboard/templates/modals/new_board.html
+```
+
+```bash
 mkdir taskboard/static
+```
+
+```bash
+touch taskboard/static/style.css
 ```
 
 ```bash
@@ -61,17 +89,21 @@ mkdir tests
 
 Planejamento de rotas:
 ```bash
-'/' -> tela com diversos boards e botão para novos boards 
-'/boards' -> tela do board com diversas tasks
+'/' -> tela com diversos boards e botão para novos boards
+'/new-board' -> criação de novo board
 '/<int:board_id>' -> tela do board com diversas tasks
+'/<int:board_id>/new-task' -> criação de novas tasks
 '/api/<int:board_id>' -> endpoint da api que retorna as tasks do board
 '/api/<int:board_id>/<str:status>' -> endpoint da api que retorna as tasks do board com status específico
 ```
 
 Planejamento de templates:
 ```bash
+'base.html' -> base dos templates que será exportada para os demais templates 
 'index.html' -> tela com um botão para novos boards + listagem dos boards criados 
 'board.html' -> tela do board + botão de nova task + listagem das tasks
+'new_task.html' -> modal para criação de tasks
+'new_board.html' -> modal para criação de boards 
 ```
 </details>
 
