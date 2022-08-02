@@ -2,6 +2,8 @@
 
 <br>
 
+<!-- 
+
 ## Estruturação do Projeto
 ---
 
@@ -109,6 +111,11 @@ Planejamento de templates:
 
 <br>
 <br>
+
+
+-->
+
+
 
 ## Execução da aplicação
 ---
