@@ -117,9 +117,6 @@ Planejamento de templates:
 <br>
 
 
--->
-
-
 
 ## Execução da aplicação
 ---

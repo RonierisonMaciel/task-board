@@ -56,10 +56,10 @@
     </div>
   </div>
   <div class="container py-3">
+    <a href="{% url 'homepage' %}" class="btn btn-primary" role="button">Back to Boards</a>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newTask">
       Add New Task
     </button>
-    <a href="{% url 'homepage' %}" class="btn btn-primary" role="button">Back to Boards</a>
   </div>
 
   <script src="{% static 'js/getTaskId.js' %}"></script>

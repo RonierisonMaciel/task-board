@@ -83,9 +83,4 @@ class TasksViewSet(viewsets.ModelViewSet):
         queryset = Task.objects.all().filter(status='done')
         serializer = TaskSerializer(queryset, many=True, context={'request': request})
         return Response(serializer.data)
-    
-    @action(detail=False)
-    def help(self, request):
-        queryset = Task.objects.all().filter(status='help')
-        serializer = TaskSerializer(queryset, many=True, context={'request': request})
-        return Response(serializer.data)
+
