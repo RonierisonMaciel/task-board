@@ -2,8 +2,6 @@
 
 <br>
 
-<!-- 
-
 ## Estruturação do Projeto
 ---
 
@@ -80,11 +78,7 @@ mkdir taskboard/static
 ```
 
 ```bash
-mkdir taskboard/static/css
-```
-
-```bash
-mkdir taskboard/static/js
+touch taskboard/static/style.css
 ```
 
 ```bash
@@ -110,6 +104,7 @@ Planejamento de templates:
 'board.html' -> tela do board + botão de nova task + listagem das tasks
 'new_task.html' -> modal para criação de tasks
 'new_board.html' -> modal para criação de boards 
+'edit_status.html' -> modal para edição de status
 ```
 </details>
 
