@@ -80,7 +80,11 @@ mkdir taskboard/static
 ```
 
 ```bash
-touch taskboard/static/style.css
+mkdir taskboard/static/css
+```
+
+```bash
+mkdir taskboard/static/js
 ```
 
 ```bash

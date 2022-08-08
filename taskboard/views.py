@@ -39,6 +39,17 @@ def new_task(request, board_id):
 
     return redirect('boardpage', board_id=board_id)
 
+def edit_task(request):
+
+    id = int(request.POST["id"])
+
+    task = get_object_or_404(Task, id=id)
+
+    task.status = request.POST['status']
+    task.save()
+
+    return redirect('boardpage', board_id=task.board_id.id)
+
 def new_board(request):
     form = BoardForm(request.POST)
 
